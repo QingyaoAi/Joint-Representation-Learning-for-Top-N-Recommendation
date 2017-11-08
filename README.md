@@ -15,9 +15,9 @@ Please refer to the paper for more details.
 
 ### Data Preparation ###
     1. Download Amazon review datasets from http://jmcauley.ucsd.edu/data/amazon/ (e.g. In our paper, we used 5-core data).
-    2. Stem and remove stop words from the Amazon review datasets if needed (e.g. In our paper, we stem the field of “reviewText” and “summary” without stop words removal)
+    2. Stem and remove stop words from the Amazon review datasets if needed (e.g. In our paper, we stem the field of "reviewText" and "summary" without stop words removal)
         1. java -Xmx4g -jar ./jar/AmazonReviewData_preprocess.jar <jsonConfigFile> <review_file> <output_review_file>
-            1. <jsonConfigFile>: A json file that specify the file path of stop words list. An example can be found in the root directory. Enter “false” if don’t want to remove stop words. 
+            1. <jsonConfigFile>: A json file that specify the file path of stop words list. An example can be found in the root directory. Enter "false" if don’t want to remove stop words. 
             2. <review_file>: the path for the original Amazon review data
             3. <output_review_file>: the output path for processed Amazon review data
     3. Index datasets
@@ -55,17 +55,17 @@ Please refer to the paper for more details.
         8. data_dir: Data directory, which should be the <indexed_data_dir>
         9. input_train_dir: The directory of training and testing data, which usually is <data_dir>/query_split/
         10. train_dir: Model directory & output directory
-        11. similarity_func: The function to compute the ranking score for an item with the joint model of query and user embeddings. Default “product”.
-            1. “product”: the dot product of two vectors.
-            2. “cosine”: the cosine similarity of two vectors.
-            3. “bias_product”: the dot product plus a item-specific bias
-        12. net_struct:  Network structure parameters. Different parameters are separated by “_” (e.g. ). Default “simplified_fs”
-            1. “bpr”: train models in a bpr framework [1].
-            2. “simplified”: simplified embedding-based language models without modeling for each review [2].
-            3. “hdc”: use regularized embedding-based language models with word context [4]. Otherwise, use the default model, which is the embedding-based language models based on paragraph vector model. [3]
-            5. “extend”: use the extendable model structure (see more details in the paper).
-            6. “text”: use review data. 
-            7. “image”: use image data.
+        11. similarity_func: The function to compute the ranking score for an item with the joint model of query and user embeddings. Default "product".
+            1. "product": the dot product of two vectors.
+            2. "cosine": the cosine similarity of two vectors.
+            3. "bias_product": the dot product plus a item-specific bias
+        12. net_struct:  Network structure parameters. Different parameters are separated by "_" (e.g. ). Default "simplified_fs"
+            1. "bpr": train models in a bpr framework [1].
+            2. "simplified": simplified embedding-based language models without modeling for each review [2].
+            3. "hdc": use regularized embedding-based language models with word context [4]. Otherwise, use the default model, which is the embedding-based language models based on paragraph vector model. [3]
+            5. "extend": use the extendable model structure (see more details in the paper).
+            6. "text": use review data. 
+            7. "image": use image data.
             8. "rate": use rating-based latent representations.
             	* if none of "text", "image" and "rate" is specified, the model will use all of them.	
         13. embed_size: Size of each embedding. Default 100.
@@ -74,14 +74,14 @@ Please refer to the paper for more details.
         16. steps_per_checkpoint: How many training steps to do per checkpoint. Default 200
         17. seconds_per_checkpoint: How many seconds to wait before storing embeddings. Default 3600
         18. negative_sample: How many samples to generate for negative sampling. Default 5.
-        19. decode: Set to “False" for training and “True" for testing. Default “False"
-        20. test_mode: Test modes. Default “product_scores"
-            1. “product_scores”: output ranking results and ranking scores; 
-            2. “output_embedding": output embedding representations for users, items and words.
+        19. decode: Set to "False" for training and "True" for testing. Default "False"
+        20. test_mode: Test modes. Default "product_scores"
+            1. "product_scores": output ranking results and ranking scores; 
+            2. "output_embedding": output embedding representations for users, items and words.
         21. rank_cutoff: Rank cutoff for output rank lists. Default 100.
     2. Evaluation
-        1. After training with "--decode False”, generate test rank lists with "--decode True”.
-        2. TREC format rank lists for test data will be stored in <train_dir> with name “test.<similarity_func>.ranklist”
+        1. After training with "--decode False", generate test rank lists with "--decode True".
+        2. TREC format rank lists for test data will be stored in <train_dir> with name "test.<similarity_func>.ranklist"
         3. Evaluate test rank lists with ground truth <input_train_dir>/test.qrels.
         	1. python recommendation_metric.py <rank_list_file> <test_qrel_file> <rank_cutoff_list>
         	2. <rank_list_file>: the result list, e.g. <train_dir>/test.<similarity_func>.ranklist 
