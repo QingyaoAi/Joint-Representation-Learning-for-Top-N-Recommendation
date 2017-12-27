@@ -1,7 +1,7 @@
 # Overview #
 This is an implementation of the Joint Representation Learning Model (JRL) for product recommendation based on heterogeneous information sources [2]. Please cite the following paper if you plan to use it for your project：
     
-* Yongfeng Zhang* Qingyao Ai*, Xu Chen, W. Bruce Croft. 2017. Joint Representation Learning for Top-N Recommendation with Heterogeneous Information Sources. In Proceedings of CIKM ’17
+* Yongfeng Zhang*, Qingyao Ai*, Xu Chen, W. Bruce Croft. 2017. Joint Representation Learning for Top-N Recommendation with Heterogeneous Information Sources. In Proceedings of CIKM ’17
     	
 The JRL is a deep neural network model that jointly learn latent representations for products and users based on reviews, images and product ratings. 
 The model can jointly or independently latent representations for products and users based on different information.
