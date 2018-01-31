@@ -46,7 +46,7 @@ import data_util
 from MultiViewEmbedding import MultiViewEmbedding_model
 
 
-tf.app.flags.DEFINE_float("learning_rate", 0.05, "Learning rate.")
+tf.app.flags.DEFINE_float("learning_rate", 0.5, "Learning rate.")
 tf.app.flags.DEFINE_float("learning_rate_decay_factor", 0.90,
 							"Learning rate decays by this much.")
 tf.app.flags.DEFINE_float("max_gradient_norm", 5.0,
@@ -55,7 +55,7 @@ tf.app.flags.DEFINE_float("subsampling_rate", 1e-4,
 							"The rate to subsampling.")
 tf.app.flags.DEFINE_float("L2_lambda", 0.0,
 							"Lambda for L2 regularization.")
-tf.app.flags.DEFINE_float("image_weight", 1.0,
+tf.app.flags.DEFINE_float("image_weight", 0.0001,
 							"weight for image loss.")
 tf.app.flags.DEFINE_integer("batch_size", 64,
 							"Batch size to use during training.")
