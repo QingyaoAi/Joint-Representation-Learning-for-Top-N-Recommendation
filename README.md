@@ -59,7 +59,7 @@ Please refer to the paper for more details.
             1. "product": the dot product of two vectors.
             2. "cosine": the cosine similarity of two vectors.
             3. "bias_product": the dot product plus a item-specific bias
-        12. net_struct:  Network structure parameters. Different parameters are separated by "_" (e.g. ). Default "simplified_fs"
+        12. net_struct:  Network structure parameters. Different parameters are separated by "_" (e.g. ). Default "simplified_pv_bpr"
             1. "bpr": train models in a bpr framework [1].
             2. "simplified": simplified embedding-based language models without modeling for each review [2].
             3. "hdc": use regularized embedding-based language models with word context [4]. Otherwise, use the default model, which is the embedding-based language models based on paragraph vector model. [3]
@@ -68,10 +68,10 @@ Please refer to the paper for more details.
             7. "image": use image data.
             8. "rate": use rating-based latent representations.
             	* if none of "text", "image" and "rate" is specified, the model will use all of them.	
-        13. embed_size: Size of each embedding. Default 100.
-        14. window_size: Size of context window for hdc model. Default 5.
-        15. max_train_epoch: Limit on the epochs of training (0: no limit). Default 5.
-        16. steps_per_checkpoint: How many training steps to do per checkpoint. Default 200
+        13. embed_size: Size of each embedding. Default 300.
+        14. window_size: Size of context window for hdc model. Default 3.
+        15. max_train_epoch: Limit on the epochs of training (0: no limit). Default 20.
+        16. steps_per_checkpoint: How many training steps to do per checkpoint. Default 400
         17. seconds_per_checkpoint: How many seconds to wait before storing embeddings. Default 3600
         18. negative_sample: How many samples to generate for negative sampling. Default 5.
         19. decode: Set to "False" for training and "True" for testing. Default "False"
