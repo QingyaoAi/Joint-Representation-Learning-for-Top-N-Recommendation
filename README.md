@@ -59,7 +59,7 @@ Please refer to the paper for more details.
             1. "product": the dot product of two vectors.
             2. "cosine": the cosine similarity of two vectors.
             3. "bias_product": the dot product plus a item-specific bias
-        12. net_struct:  Network structure parameters. Different parameters are separated by "_" (e.g. ). Default "simplified_pv_bpr"
+        12. net_struct:  Network structure parameters. Different parameters are separated by "_" (e.g. ). Default "simplified_bpr"
             1. "bpr": train models in a bpr framework [1].
             2. "simplified": simplified embedding-based language models without modeling for each review [2].
             3. "hdc": use regularized embedding-based language models with word context [4]. Otherwise, use the default model, which is the embedding-based language models based on paragraph vector model. [3]

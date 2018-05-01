@@ -64,7 +64,7 @@ tf.app.flags.DEFINE_string("data_dir", "/tmp", "Data directory")
 tf.app.flags.DEFINE_string("input_train_dir", "", "The directory of training and testing data")
 tf.app.flags.DEFINE_string("train_dir", "/tmp", "Model directory & output directory")
 tf.app.flags.DEFINE_string("similarity_func", "product", "Select similarity function")
-tf.app.flags.DEFINE_string("net_struct", "simplified_pv_bpr", "Select network structure")
+tf.app.flags.DEFINE_string("net_struct", "simplified_bpr", "Select network structure")
 tf.app.flags.DEFINE_integer("embed_size", 300, "Size of each embedding.")
 tf.app.flags.DEFINE_integer("window_size", 3, "Size of context window.")
 tf.app.flags.DEFINE_integer("max_train_data_size", 0,
